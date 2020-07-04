@@ -1,0 +1,44 @@
+.Navbar{
+    height: 52px;
+    box-sizing: content-box;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    padding: 10px;
+}
+
+.Navbar select {
+    padding: 1%;
+    margin-right: 50px;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    color:green
+}
+
+.Navbar select:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+.Navbar select:disabled {
+    cursor:not-allowed;
+}
+
+.Navbar div {
+    margin-left: 20%;
+}
+
+.Navbar label {
+    border-radius:8px;
+    margin:10px;
+    background-color: lightgrey;
+    color:darkgreen;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.Navbar img {
+    float: left !important;
+    margin-top: -15px !important;
+    padding:10px;
+}

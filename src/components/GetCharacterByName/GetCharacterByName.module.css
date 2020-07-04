@@ -1,0 +1,41 @@
+.Name {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.Name input {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Name button {
+    font-size:15px;
+    font-weight: bold;
+    width:15%;
+    background-color: white;
+    color:darkgreen;
+    border:0px;
+}
+
+.Name button:hover {
+    cursor: pointer;
+}
+
+.Name button:focus {
+    outline:none;
+}
+
+.Name label {
+    font-size: medium;
+    font-weight: bold;
+    color:darkgreen;
+}
+
+.Center {
+    width: 15%;
+    margin: 0 auto;
+}

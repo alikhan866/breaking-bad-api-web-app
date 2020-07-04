@@ -1,0 +1,42 @@
+.Character {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+.Character input {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Character button {
+    font-size:15px;
+    font-weight: bold;
+    width:15%;
+    background-color: white;
+    color:darkgreen;
+    border:0px;
+}
+
+.Character button:hover {
+    cursor: pointer;
+}
+
+.Character button:focus {
+    outline:none;
+}
+
+.Character label {
+    font-size: medium;
+    font-weight: bold;
+    color:darkgreen;
+}
+
+.Center {
+    width: 15%;
+    margin: 0 auto;
+}

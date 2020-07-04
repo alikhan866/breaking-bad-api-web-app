@@ -1,0 +1,27 @@
+.Character {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+}
+.Character select {
+    position: relative;
+    display: block;
+    margin : 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    width: 40%;
+    height: 50px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color:darkgreen;
+}
+
+.Character select:focus{
+    outline: none;
+}
+.Character select:hover{
+    cursor: pointer;
+}
+

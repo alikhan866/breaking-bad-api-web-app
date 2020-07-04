@@ -1,0 +1,60 @@
+.flip-box {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    margin:0
+}
+
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+
+  .flip-box-back {
+    background-color: rgb(255, 255, 255);
+    color: darkgreen;
+    transform: rotateY(180deg);
+  }
+
+  .h1 {
+    color:darkgreen
+  }
+  .Test {
+      display: inline-block;
+      width: 210px;
+      height: 300px;
+      margin-left:13px;
+      margin-right:50px;
+      margin-bottom:50px;
+  }
+  .Background {
+    background: rgb(3,24,0);
+    background: linear-gradient(to top 0deg, rgba(3,24,0,1) 0%, rgba(3,27,0,1) 4%, rgba(5,32,0,1) 9%, rgba(5,40,0,1) 18%, rgba(6,48,0,1) 26%, rgba(7,59,0,1) 32%, rgba(8,65,0,1) 38%, rgba(8,71,0,1) 44%, rgba(9,73,0,1) 52%, rgba(9,74,0,1) 57%, rgba(11,83,0,1) 67%, rgba(11,94,0,1) 75%, rgba(13,103,0,1) 82%, rgba(15,121,0,1) 91%, rgba(15,130,0,1) 100%);
+    height: 100%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+  }
