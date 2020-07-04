@@ -1,4 +1,6 @@
-# breaking-bad-api-web-app
+# breaking-bad-api-web-app (Purely uses React-hooks)
+
+## Redux used with new hooks support added by react-redux package
 
 ## Work in Progress
 
