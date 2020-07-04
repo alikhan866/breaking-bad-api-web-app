@@ -1,8 +1,8 @@
 # breaking-bad-api-web-app
 
-##Work in Progress
+## Work in Progress
 
-###Todo
+### Todo
 
 1) Add logic for breaking bad quotes
 
