@@ -30,9 +30,9 @@ const Body = (props) => {
         )
     }
     return (
-        <div>
+        <React.Fragment>
             {content}
-        </div>
+        </React.Fragment>
     )
 }
 

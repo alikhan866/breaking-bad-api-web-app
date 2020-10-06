@@ -1,42 +1,52 @@
-.Character {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    text-align: center;
-
-}
-.Character input {
-    position: relative;
-    display: block;
-    margin : 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.Character label,
+.Character input,
 .Character button {
-    font-size:15px;
-    font-weight: bold;
-    width:15%;
-    background-color: white;
-    color:darkgreen;
-    border:0px;
-}
-
-.Character button:hover {
-    cursor: pointer;
-}
-
-.Character button:focus {
-    outline:none;
+  margin: 20px auto;
+  display: block;
 }
 
 .Character label {
-    font-size: medium;
-    font-weight: bold;
-    color:darkgreen;
+    text-align: center;
+    font-size: 40px;
+    color: darkgreen;
 }
 
-.Center {
-    width: 15%;
-    margin: 0 auto;
+.Character input {
+    width: 300px;
+    height: 27px;
+    border: none;
+    border-style: none;
+    text-align: center;
+}
+
+.Character input:focus {
+    outline-color: 	#3CB371
+}
+
+.Character button {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    background: #3CB371;
+    color:#fff;
+    cursor: pointer;
+    outline-style: none;
+    border: 0;
+    font-size: 22px;
+}
+
+.Character button:hover {
+    opacity: 0.9;
+}
+
+.Img {
+   display: flex;
+   justify-content: center;
 }

@@ -1,71 +1,86 @@
-import React, { useState } from 'react'
-import classes from './Navbar.module.css'
-import { useDispatch } from 'react-redux'
-import { selectAction } from '../../../store/actions/actions'
-import Logo from '../../../images/BB_S5_excl_namelab_c.jpg'
+import React, { useState } from "react";
+import classes from "./Navbar.module.css";
+import { useDispatch } from "react-redux";
+import { selectAction } from "../../../store/actions/actions";
+import Logo from "../../../images/BB_S5_excl_namelab_c.jpg";
+
+import Select from 'react-select';
+
+const CharacterOptions = [
+    { value: '-----------', label: '-----------' },
+    { value: 'Get character by id', label: 'Get character by id' },
+    { value: 'Get character by category', label: 'Get character by category' },
+    { value: 'Get random character', label: 'Get random character' },
+    { value: 'Search character by name', label: 'Search character by name' },
+  ];
+
+  const QuoteOptions = [
+    { value: '-----------', label: '-----------' },
+    { value: 'Get quote by id', label: 'Get quote by id' },
+    { value: 'Get quotes by series', label: 'Get quotes by series' },
+    { value: 'Get a random quote', label: 'Get a random quote' },
+    { value: 'Get quote by author', label: 'Get quote by author' },
+    { value: 'Get a random quote by author', label: 'Get a random quote by author' },
+  ];
+
 const Navbar = (props) => {
-    const dispatch = useDispatch()
-    const [selectedCharacter, setSelectedCharacter] = useState(false)
-    const [selectedQuote, setSelectedQuote] = useState(false)
+  const dispatch = useDispatch();
+  const [selectedCharacter, setSelectedCharacter] = useState(false);
+  const [selectedQuote, setSelectedQuote] = useState(false);
 
-    const dropDownCharacterSelected = (value) => {
-        if (value !== '-----------') {
-            setSelectedCharacter(true)
-            dispatch(selectAction(value))
-        }
-        else {
-            dropDownCharacterDeSelected(value)
-            dispatch(selectAction(null))
-        }
+  const dropDownCharacterSelected = (value) => {
+    if (value !== "-----------") {
+      setSelectedCharacter(true);
+      dispatch(selectAction(value.value));
+    } else {
+      dropDownCharacterDeSelected(value.value);
+      dispatch(selectAction(null));
     }
+  };
 
-    const dropDownCharacterDeSelected = () => {
-        setSelectedCharacter(false)
+  const dropDownCharacterDeSelected = () => {
+    setSelectedCharacter(false);
+  };
+
+  const dropDownQuoteSelected = (value) => {
+    if (value !== "-----------") {
+      setSelectedQuote(true);
+      dispatch(selectAction(value.value));
+    } else {
+      dropDownQuoteDeSelected(value.value);
+      dispatch(selectAction(null));
     }
+  };
 
+  const dropDownQuoteDeSelected = () => {
+    setSelectedQuote(false);
+  };
 
+  return (
+    <nav className={classes.Navbar}>
+      <img src={Logo} alt="Logo" width="100" height="60" />
+      <div>
+        <ul>
+          <li>
+            <label>Characters</label>
+            <Select
+              disabled={selectedQuote}
+              onChange={dropDownCharacterSelected}
+              options={CharacterOptions}
+            />
+          </li>
+          <li>
+            <label>Quotes</label>
+            <Select
+              disabled={selectedCharacter}
+              onChange={dropDownQuoteSelected}
+              options={QuoteOptions}
+            />
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
-    const dropDownQuoteSelected = (value) => {
-        if (value !== '-----------') {
-            setSelectedQuote(true)
-            dispatch(selectAction(value))
-        }
-        else {
-            dropDownQuoteDeSelected(value)
-            dispatch(selectAction(null))
-        }
-    }
-
-    const dropDownQuoteDeSelected = () => {
-        setSelectedQuote(false)
-    }
-
-
-
-    return (
-        <nav className={classes.Navbar}>
-            <img src={Logo} alt="Logo" width="100" height="60"/>
-            <div>
-                <label>Characters</label>
-                <select disabled={selectedQuote} onChange={event => dropDownCharacterSelected(event.target.value)}>
-                    <option value="-----------">-----------</option>
-                    <option value="Get character by id" >Get character by id</option>
-                    <option value="Get character by category">Get character by category</option>
-                    <option value="Get random character">Get random character</option>
-                    <option value="Search character by name">Search character by name</option>
-                </select>
-                <label>Quotes</label>
-                <select disabled={selectedCharacter} onChange={event => dropDownQuoteSelected(event.target.value)}>
-                    <option value="-----------">-----------</option>
-                    <option value="Get quote by id">Get quote by id</option>
-                    <option value="Get quotes by series">Get quotes by series</option>
-                    <option value="Get a random quote">Get a random quote</option>
-                    <option value="Get quote by author">Get quote by author</option>
-                    <option value="Get a random quote by author">Get a random quote by author</option>
-                </select>
-            </div>
-        </nav>
-    )
-}
-
-export default Navbar
+export default Navbar;
