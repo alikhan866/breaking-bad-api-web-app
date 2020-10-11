@@ -26,6 +26,37 @@ const QuoteOptions = [
   },
 ];
 
+const colourStyles = {
+  control: styles => ({ ...styles, backgroundColor: 'white' }),
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    return {
+      ...styles,
+      backgroundColor: isDisabled
+        ? null
+        : isSelected
+        ? '#003214'
+        : isFocused
+        ? 'green'
+        : null,
+      cursor: isDisabled ? 'not-allowed' : 'default',
+      color: isSelected ? 'lightgreen' : 'black',
+      ':active': {
+        ...styles[':active'],
+        backgroundColor: !isDisabled && ('#003214'),
+        color: 'lightgreen'
+      },
+      ':hover': {
+        ...styles[':hover'],
+        color:'lightgreen',
+      }
+    };
+  },
+  input: styles => ({ ...styles}),
+  placeholder: styles => ({ ...styles }),
+  singleValue: (styles, { data }) => ({ ...styles}),
+};
+
+
 const Navbar = (props) => {
   const dispatch = useDispatch();
   const [selectedCharacter, setSelectedCharacter] = useState(false);
@@ -71,6 +102,15 @@ const Navbar = (props) => {
                 disabled={selectedQuote}
                 onChange={dropDownCharacterSelected}
                 options={CharacterOptions}
+                styles={colourStyles}
+                theme={theme => ({
+                  ...theme,
+                  colors: {
+                    ...theme.colors,
+                    primary25: 'hotpink',
+                    primary: 'darkgreen',
+                  },
+                })}
               />
             </div>
           </li>
@@ -81,6 +121,15 @@ const Navbar = (props) => {
                 disabled={selectedCharacter}
                 onChange={dropDownQuoteSelected}
                 options={QuoteOptions}
+                styles={colourStyles}
+                theme={theme => ({
+                  ...theme,
+                  colors: {
+                    ...theme.colors,
+                    primary25: 'hotpink',
+                    primary: 'darkgreen',
+                  },
+                })}
               />
             </div>
           </li>
